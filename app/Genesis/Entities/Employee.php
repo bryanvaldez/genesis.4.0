@@ -6,4 +6,7 @@ class Employee extends \Eloquent {
 	public function user(){
 		return $this->hasOne('Genesis\Entities\User', 'id', 'id');
 	}
+	public function category(){
+		return $this->belongsTo('Genesis\Entities\Category');
+	}
 }

@@ -6,22 +6,24 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>N*</th>
+					<th>Categoria</th>
+					<td><a href="{{ route('category', [$employee->category->slug, $employee->category->id]) }}">{{ $employee->category->name }}</a></td>
 				</tr>
 				<tr>
-					<th>Name</th>
+					<th>Descripción</th>
+					<td>{{ $employee->description }}</td>
 				</tr>
 				<tr>	
-					<th>Last Name</th>
+					<th>Registrado</th>
+					<td>{{ $employee->created_at }}</td>
 				</tr>
 				<tr>
-					<th>Description</th>
+					<th>Email</th>
+					<td>{{ $employee->user->email }}</td>
 				</tr>
 				<tr>
-					<th>Job</th>
-				</tr>
-				<tr>
-					<th>Acciones</th>
+					<th>Website</th>
+					<td><a href="{{ $employee->website_url }}">{{ $employee->website_url}}</a></td>
 				</tr>
 			</thead>
 		</table>
