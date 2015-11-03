@@ -1,0 +1,222 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../../fonts/icomoon.eot?5lvfya');
+	src:url('../../fonts/icomoon.eot?#iefix5lvfya') format('embedded-opentype'),
+		url('../../fonts/icomoon.ttf?5lvfya') format('truetype'),
+		url('../../fonts/icomoon.woff?5lvfya') format('woff'),
+		url('../../fonts/icomoon.svg?5lvfya#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+html,body{
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+body{
+	padding-bottom: 60px;
+}
+.container{
+	margin: 0 auto;
+	width: 75%;
+	padding: 2px;
+	box-sizing:border-box;
+}
+header{
+	height: 70px;
+	background: #555;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 2;
+}
+footer{
+	background-color: #E8E8E8;
+	height: 60px;
+	width: 100%;
+}
+.sec{
+	overflow: hidden;
+}
+.main{
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	box-sizing: border-box;
+	padding-top: 70px;
+}
+.table{
+	border-spacing: 0;
+	border-collapse: collapse;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	width: 100%;
+	background: #FFF;
+}
+.table thead{
+
+}
+.table tbody{
+
+}
+.table td, .table th{
+	padding: 3px 3px;
+	border: 1px solid #DDD;
+	border-spacing: 0;
+	vertical-align: top;
+	min-width: 30px;
+	box-sizing: border-box;
+}
+.table tr:nth-child(2n){
+	background: #E8E8E8;
+}
+.form{
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+}
+.form .item-form{
+
+}
+.form label{
+	font-size: 14px;
+	margin-right: 20px;
+}
+.form input[type="text"],.form input[type="email"],.form input[type="search"],.form input[type="password"],.form select,.form textarea, .form select[multiple]{
+	border: 1px solid #C7C7C7;
+	padding: 5px;
+	border-radius: 3px;
+}
+.form select[multiple]{
+	min-height: 300px;
+	width: 270px;
+}
+.block{
+	background: #F7F7F7;
+	margin-bottom: 20px;
+}
+.block>.title{
+    padding: 15px 10px 10px 38px;
+    height: 30px;
+    background: #003977;
+    color: #FFFFFF;
+    text-transform: uppercase;
+	border-radius: 4px;
+	font-size: 16px;
+}
+.block .content{
+	padding: 20px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border:1px solid #A9A9A9;
+}
+.container{
+
+}
+.pagination{
+	padding: 0;
+	margin: 15px 0 0 0;
+}
+.pagination li{
+	display: inline-block;
+	border: 1px solid #D3D3D3;
+	line-height: 28px;
+	padding: 0 5px;
+	box-sizing: border-box;
+	min-width: 30px;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.pagination li a{
+	display: block;
+	text-decoration: none;
+	color: #555;
+}
+.pagination li:hover{
+	background: #E0E0E0;
+}
+.pagination li.active a{
+	color: #FFF;
+	cursor: default;
+}
+.pagination li.active,.pagination li.active:hover{
+	font-weight: 700;
+	background: #797979;
+}
+.select-intercambio .form-group{
+	display: inline-block;
+	vertical-align: bottom;
+}
+.select-intercambio .form-group label{
+	display: block;
+	margin-bottom: 10px;
+}
+.select-intercambio .button-group{
+	margin: 0 10px;
+}
+.select-intercambio .button-group button{
+	display: block;
+	margin-top: 5px;
+}
+/*---------- Style buttons -----------*/
+button.btn-default{
+	border: 1px solid #C5C5C5;
+	background: #ECECEC;
+	border-radius: 3px;
+	line-height: 20px;
+	font-family: 'Open Sans', sans-serif;
+	padding: 7px 10px;
+	font-weight: 700;
+	color: #444;
+	box-shadow: 0 0 5px #D7D7D7;
+	cursor: pointer;
+}
+button.btn-default:hover{
+	background: #DADADA;
+}
+button.btn-action, a.btn-action{
+	border: 0;
+	background: transparent;
+	padding: 2px;
+	margin-left: 30%;
+	cursor: pointer;
+}
+
+span.icon:before{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #444444;
+}
+span.icon-delete:before{content: "\e9ac";color: #CF2633}
+span.icon-left:before{content: "\ea38";}
+span.icon-right:before{content: "\ea34";color: #CF2633}
+
+
+/*-----------------------------*/
+.form{
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+}
+.form .datos{
+	width: 30.5%;
+    position: relative;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 20px
+
+}
+.form .datos .label{
+	display: inline-block;
+	float: left;
+	vertical-align: top;
+	width: 160px;
+	text-transform: initial;
+}
+input[type="text"]{
+    width: 50%;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+}
+

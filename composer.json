@@ -1,0 +1,37 @@
+{
+	"require": {
+		"laravel/framework": "4.0.*"
+	},
+	"require-dev": { 
+		"way/generators": "~2.0",
+		"fzaninotto/faker": "v1.3.0",
+		"barryvdh/laravel-debugbar": "1.*"
+	}, 
+	"autoload": {
+		"psr-4": {
+			"Genesis\\": "app/Genesis"
+		},
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php"
+		]
+	},
+	"scripts": {
+		"pre-update-cmd": [
+			"php artisan clear-compiled"
+		],
+		"post-install-cmd": [
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan optimize"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev"
+}
