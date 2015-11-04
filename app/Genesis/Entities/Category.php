@@ -7,4 +7,7 @@ class Category extends \Eloquent {
 	public function employees(){
 		return $this->hasMany('Genesis\Entities\Employee');
 	}
+	public function getPaginateEmployeesAttribute(){
+		return Employee::where('category_id', $this->id)->paginate();
+	}
 }

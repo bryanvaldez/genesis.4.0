@@ -17,6 +17,10 @@
 					<th>Registrado</th>
 					<td>{{ $employee->created_at }}</td>
 				</tr>
+				<tr>	
+					<th>Tipo de trabajo</th>
+					<td>{{ $employee->job_type_title }}</td>
+				</tr>
 				<tr>
 					<th>Email</th>
 					<td>{{ $employee->user->email }}</td>

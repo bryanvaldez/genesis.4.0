@@ -133,6 +133,11 @@ footer{
 	text-decoration: none;
 	color: #555;
 }
+.pagination li span{
+	display: block;
+	text-decoration: none;
+	color: #fff;
+}
 .pagination li:hover{
 	background: #E0E0E0;
 }

@@ -1,9 +1,13 @@
 @extends('layout.main.master')
 @section('content')
 <section class="block">
-	<h3 class="title">{{ $category->name }}</h3>
+	<h1 class="title">Main Page</h1>
 	<div class="content">
-		<table class="table">
+		<h3>Last Employees</h3>
+
+		@foreach($latest_employees as $category)
+		<h5><a href="{{ route('category', [$category->slug, $category->id]) }}">{{ $category->name }}</a><h5>
+					<table class="table">
 			<thead>
 				<tr>
 					<th>N*</th>
@@ -15,7 +19,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($category->paginate_employees as $key => $employee)
+				@foreach ($category->employees as $key => $employee)
 				<tr>
 					<th scope="row">{{$key+1}}</th>
 					<td>{{ $employee->user->name }}</td>
@@ -27,17 +31,8 @@
 				@endforeach
 			</tbody>
 		</table>
-		<div>{{ $category->paginate_employees->links() }}</div>
-<!-- 		<div >
-			<ul class="pagination">
-				<li><a href="">Primero</a></li>
-				<li><a href="">Anterior</a></li>
-				<li class="active"><a href="">1</a></li>
-				<li><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">Siguiente</a></li>
-				<li><a href="">Ultimo</a></li>
-			</ul>
-		</div> -->
+		@endforeach	
+
+
 	</div>
 </section>

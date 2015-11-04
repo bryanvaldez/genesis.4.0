@@ -20,6 +20,7 @@ class EmployeeController extends \BaseController {
 	}
 	public function show($slug, $id){
 		$employee = $this->employeeRepo->find($id);
+		
 		return View::make('employee/show', compact('employee'));
 	}
 }
