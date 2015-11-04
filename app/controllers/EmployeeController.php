@@ -15,12 +15,10 @@ class EmployeeController extends \BaseController {
 	}
 	public function index($slug, $id){	
 		$category = $this->categoryRepo->find($id);
-		
 		return View::make('employee/category', compact('category'));
 	}
 	public function show($slug, $id){
-		$employee = $this->employeeRepo->find($id);
-		
+		$employee = $this->employeeRepo->find($id);	
 		return View::make('employee/show', compact('employee'));
 	}
 }

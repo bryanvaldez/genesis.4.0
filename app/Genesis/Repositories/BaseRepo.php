@@ -13,7 +13,8 @@ abstract class BaseRepo{
 	abstract public function getModel();
 
 	public function find($id){
+		//return $this->model->with(['employees'])->get();
 		return $this->model->find($id);
+	}
 
-	}	
 }
