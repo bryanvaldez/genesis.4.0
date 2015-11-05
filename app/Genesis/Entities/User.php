@@ -19,6 +19,8 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password','remember_token');
 
+	protected $fillable = array('name', 'last_name', 'email', 'password');
+
 	/**
 	 * Get the unique identifier for the user.
 	 *
@@ -27,6 +29,10 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	public function getAuthIdentifier()
 	{
 		return $this->getKey();
+	}
+
+	public function setPasswordAttribute($value){
+		$this->attributes['password'] = \Hash::make($value);
 	}
 
 	/**

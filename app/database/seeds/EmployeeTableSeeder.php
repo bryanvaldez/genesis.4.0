@@ -20,8 +20,8 @@ class EmployeeTableSeeder extends Seeder {
 				'name'		=>$firstName,
 				'last_name' =>$lastName,
 				'email'		=>$faker->email,
-				'password'	=>Hash::make(123456),
-				'type'		=>'user'
+				'password'	=>'123456',
+				'type'		=>'employee'
 			]);
 			Employee::create([
 				'id'		=>$user->id,

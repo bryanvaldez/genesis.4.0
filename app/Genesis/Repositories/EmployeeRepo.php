@@ -11,7 +11,7 @@ class EmployeeRepo extends BaseRepo{
 	public function getModel(){
 		return new Employee;
 	}
-	public function findLatest($take = 12){
+	public function findLatest($take = 10){
 		return Category::with([
 			'employees' => function($q) use ($take){
 					$q->take($take);

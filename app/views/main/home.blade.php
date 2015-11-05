@@ -6,8 +6,8 @@
 		<h3>Last Employees</h3>
 
 		@foreach($latest_employees as $category)
-		<h5><a href="{{ route('category', [$category->slug, $category->id]) }}">{{ $category->name }}</a><h5>
-					<table class="table">
+		<h5><a href="{{ route('category', [$category->slug, $category->id]) }}">{{ $category->name }}</a><a href="{{ route('sign_up') }}">......(Registrate!)</a><h5>
+		<table class="table"> 
 			<thead>
 				<tr>
 					<th>N*</th>

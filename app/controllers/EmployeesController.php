@@ -3,7 +3,7 @@
 use Genesis\Repositories\CategoryRepo;
 use Genesis\Repositories\EmployeeRepo;
 
-class EmployeeController extends \BaseController {
+class EmployeesController extends \BaseController {
 
 	protected $categoryRepo;
 	protected $employeeRepo;
