@@ -1,21 +1,24 @@
 <?php
 
 use Genesis\Entities\User;
+use Genesis\Managers\RegisterManager;
+use Genesis\Repositories\EmployeeRepo;
 
 class UsersController extends BaseController{
+
+	protected $employeeRepo;
+
+	public function __construct(EmployeeRepo $employeeRepo){
+		$this->employeRepo = $employeeRepo
+	}
 
 	public function signUp(){
 		return View::make('user/sign-up'); 
 	}
 	public function register(){
-		$data = Input::only(['name','last_name','email','password', 'password_confirmation']);
-		$rules = [
-			'name' 		=> 'required',
-			'last_name' => 'required',
-			'email'     => 'required|email|unique:users,email',
-			'password'	=> 'required|confirmed',
-			'password_confirmation'	=> 'required'
-		];
+		$user = $this->employeeRepo->newEmployee();
+		$manager  = new RegisterManager($user, Input::all());
+
 		$validation = Validator::make($data, $rules);
 
 		if($validation->passes()){

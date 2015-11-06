@@ -18,17 +18,17 @@ body{
 	padding-bottom: 60px;
 }
 .container{
-	margin: 0 auto;
-	width: 75%;
-	padding: 2px;
 	box-sizing:border-box;
+	margin: 0 auto;
+	padding: 2px;
+	width: 75%;
 }
 header{
-	height: 70px;
 	background: #555;
+	height: 70px;
 	position: fixed;
-	width: 100%;
 	top: 0;
+	width: 100%;
 	z-index: 2;
 }
 footer{
@@ -40,11 +40,11 @@ footer{
 	overflow: hidden;
 }
 .main{
+	box-sizing: border-box;
 	display: inline-block;
+	padding-top: 70px;
 	vertical-align: top;
 	width: 100%;
-	box-sizing: border-box;
-	padding-top: 70px;
 }
 .table{
 	border-spacing: 0;
