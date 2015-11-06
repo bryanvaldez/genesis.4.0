@@ -17,8 +17,8 @@ abstract class BaseManager {
 
 	public function isValid(){
 		$rules 		  = $this->getRules();
-		$validation   = Validator::make($this->data, $rules);
-		$isValid	  = $validation->passed();
+		$validation   = \Validator::make($this->data, $rules);
+		$isValid	  = $validation->passes();
 		$this->errors = $validation->messages();
 
 		return $isValid;

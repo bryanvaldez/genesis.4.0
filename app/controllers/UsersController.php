@@ -9,9 +9,8 @@ class UsersController extends BaseController{
 	protected $employeeRepo;
 
 	public function __construct(EmployeeRepo $employeeRepo){
-		$this->employeRepo = $employeeRepo
+		$this->employeeRepo = $employeeRepo;
 	}
-
 	public function signUp(){
 		return View::make('user/sign-up'); 
 	}
@@ -19,15 +18,9 @@ class UsersController extends BaseController{
 		$user = $this->employeeRepo->newEmployee();
 		$manager  = new RegisterManager($user, Input::all());
 
-		$validation = Validator::make($data, $rules);
-
-		if($validation->passes()){
-			//User::create($data);
-			$user = new User($data);
-			$user->type = 'employee';
-			$user->save();
+		if($manager->save()){
 			return Redirect::route('home');
 		}
-		return Redirect::back()->withInput()->withErrors($validation->messages());	
+		return Redirect::back()->withInput()->withErrors($manager->getErrors());	
 	}
 }

@@ -4,6 +4,7 @@ namespace Genesis\Repositories;
 
 use Genesis\Entities\Employee;
 use Genesis\Entities\Category;
+use Genesis\Entities\User;
 
 
 class EmployeeRepo extends BaseRepo{
@@ -19,5 +20,10 @@ class EmployeeRepo extends BaseRepo{
 				},
 			'employees.user'
 		])->get();
+	}
+	public function newEmployee(){
+		$user = new User();
+		$user->type = 'employee';
+		return $user;
 	}
 }
