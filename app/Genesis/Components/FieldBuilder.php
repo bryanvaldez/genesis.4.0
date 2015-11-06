@@ -3,8 +3,24 @@ namespace Genesis\Components;
 
 class FieldBuilder{
 
-	public function buildCssClasess($type, $attribytes){
+	protected $defaultClasses= [
+		'default' 	=> 'form-control',
+		'checkbox'	=> ''
+	]
 
+	public function getDefaultClass($type){
+		if(isset($this->defaultClass[$type]))
+		{
+			return $this->defaultClass[]
+		}
+
+	}
+
+	public function buildCssClasses($type, $attributes){
+		$defaultClasses = $this->getDefaultClass($type);
+		if(isset($attributes['class'])){
+			
+		}
 	}
 
 	public function buildLabel($name){
@@ -16,11 +32,11 @@ class FieldBuilder{
 	}
 
 	public function buildError($name){
-
+		
 	}
 
 	public function buildTemplate($type){
-
+		
 	}
 
 	public function input($type, $name, $value=null, $attibutes=array(), $options=array()){
@@ -30,6 +46,6 @@ class FieldBuilder{
 		$error 		= $this->buildError($name);
 		$template	= $this->buildTemplate($type);
 
-		return \View::make($template, compact());
+		return \View::make($template, compact('name', 'label', 'control', 'error'));
 	}	
 }
