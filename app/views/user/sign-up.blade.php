@@ -5,7 +5,18 @@
 		<h1>Sign up</h1>
 		{{ Form::open(['route' => 'register', 'method' => 'POST', 'role'=> 'form', 'class'=>'form']) }}
 
-		<div>
+		{{ Field::text('name') }}
+
+		{{ Field::text('last_name') }}
+
+		{{ Field::email('email') }}
+
+		{{ Field::password('password') }}
+
+		{{ Field::password('password_confirmation', ['placeholder' => 'Repite tu clave']) }}
+
+
+<!-- 		<div>
 			{{ Form::label('name', 'Nombre') }}
 			{{ Form::text('name', null) }}
 			{{ $errors->first('name') }}
@@ -14,8 +25,8 @@
 			{{ Form::label('last_name', 'Apellido') }}
 			{{ Form::text('last_name', null) }}
 			{{ $errors->first('last_name') }}
-		</div>
-		<div>
+		</div> -->
+<!-- 		<div>
 			{{ Form::label('email', 'Correo') }}
 			{{ Form::text('email') }}
 			{{ $errors->first('email') }}
@@ -29,7 +40,7 @@
 			{{ Form::label('password_confirmation', 'Repite tu clave') }}
 			{{ Form::password('password_confirmation', null) }}
 			{{ $errors->first('password_confirmation') }}
-		</div>
+		</div> -->
 		<p><input type="submit" value="Register" class="btn btn-success"></p>
 		{{ Form::close() }}
 	</div>
