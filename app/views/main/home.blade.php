@@ -1,5 +1,29 @@
 @extends('layout.main.master')
 @section('content')
+<nav>
+    <div class="content">
+    	@if (Auth::check())
+    		<span>{{ Auth::user()->name }}</span>
+    		<span><a href="{{ route('profile') }}">Editar perfil</a></span>
+    		<span><a href="{{ route('account') }}">Editar usuario</a></span>
+    		<span><a href="{{ route('logout') }}">Salir</a></span>
+    	{{ Form::close()  }}
+		
+		@else
+    	{{ Form::open(['route' => 'login', 'method' => 'POST', 'role'=> 'form', 'class'=>'form']) }}
+    		@if (Session::has('login_error'))
+    			<span>Credenciales no validas</span>
+    		@endif
+    		{{ Field::email('email') }}
+			{{ Field::password('password') }}
+			<p>{{ Form::checkbox('remember') }} Recordarme</p>
+			<p><input type="submit" value="Login" ></p>
+    	{{ Form::close() }}
+    	@endif
+
+    </div>
+</nav>
+
 <section class="block">
 	<h1 class="title">Main Page</h1>
 	<div class="content">

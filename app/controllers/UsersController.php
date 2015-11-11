@@ -23,4 +23,8 @@ class UsersController extends BaseController{
 		}
 		return Redirect::back()->withInput()->withErrors($manager->getErrors());	
 	}
+	public function account(){
+		$user = Auth::user();
+		return View::make('users/account', compact($user));
+	}
 }
