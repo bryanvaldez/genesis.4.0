@@ -3,6 +3,7 @@
 use Genesis\Entities\User;
 use Genesis\Managers\RegisterManager;
 use Genesis\Repositories\EmployeeRepo;
+use Genesis\Managers\AccountManager;
 
 class UsersController extends BaseController{
 
@@ -25,6 +26,16 @@ class UsersController extends BaseController{
 	}
 	public function account(){
 		$user = Auth::user();
-		return View::make('users/account', compact($user));
+		return View::make('user/account', compact('user'));
+
+	}
+	public function updateAccount(){
+		$user = Auth::user();
+		$manager  = new AccountManager($user, Input::all());
+
+		if($manager->save()){
+			return Redirect::route('home');
+		}
+		return Redirect::back()->withInput()->withErrors($manager->getErrors());	
 	}
 }
