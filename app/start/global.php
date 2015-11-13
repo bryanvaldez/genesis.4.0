@@ -53,6 +53,11 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(\Genesis\Managers\ValidationException $exception)
+{
+	return Redirect::back()->withInput()->withErrors($exception->getErrors());
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
